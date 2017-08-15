@@ -1,8 +1,8 @@
-import { Component,Input } from '@angular/core'
+import { Component, Input } from '@angular/core'
 @Component({
     selector: 'simple-modal',
     template: `
-    <div id="simple-modal" class="modal fade" tabindex="-1">
+    <div id="{{elementId}}" class="modal fade" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -18,10 +18,11 @@ import { Component,Input } from '@angular/core'
         </div>
     </div>
     `,
-    styles : [`
+    styles: [`
         .metal-body { height: 250px; overflow-y: scroll;}
     `]
 })
 export class SimpleModalComponent {
     @Input() title: string
+    @Input() elementId: string
 }
